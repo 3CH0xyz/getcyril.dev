@@ -2,26 +2,32 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 export default function CTASection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-500 to-purple-600 py-20 text-white">
-      {/* Background pattern */}
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
+    <section className="relative overflow-hidden bg-gradient-to-br from-cyril-teal via-cyril-teal/90 to-blue-600 py-20 text-white">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] bg-repeat"></div>
+      </div>
 
       <div className="container relative mx-auto px-6">
         <div className="mx-auto max-w-3xl text-center">
+          {/* Headline */}
           <h2 className="mb-6 text-4xl font-bold sm:text-5xl">
             Ready to Level Up Your Development?
           </h2>
+
+          {/* Description */}
           <p className="mb-10 text-xl leading-relaxed text-white/90">
             Join developers who are building production applications faster with
             Cyril's intelligent multi-agent orchestration system.
           </p>
 
+          {/* CTA Buttons */}
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href={SITE_CONFIG.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-semibold text-primary-600 transition-all hover:scale-105 hover:bg-white/95 hover:shadow-2xl"
+              className="inline-flex items-center gap-2 rounded-md bg-cyril-orange px-8 py-4 text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-cyril-orange/90 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               <svg
                 className="h-6 w-6"
@@ -39,8 +45,9 @@ export default function CTASection() {
             </a>
           </div>
 
-          <p className="mt-8 text-sm text-white/70">
-            Open source • MIT License • Production ready
+          {/* Bottom Text */}
+          <p className="mt-8 text-sm font-medium text-white/70">
+            Open Source • MIT License • Production Ready
           </p>
         </div>
       </div>

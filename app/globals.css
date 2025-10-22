@@ -2,12 +2,109 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Cyril Brand Colors */
+    --cyril-teal: #2d7d8e;
+    --cyril-orange: #c15f3c;
+
+    /* Agent Colors */
+    --agent-architect: #8b5cf6;
+    --agent-researcher: #f59e0b;
+    --agent-implementer: #14b8a6;
+    --agent-reviewer: #0ea5e9;
+    --agent-tester: #84cc16;
+    --agent-debugger: #fb923c;
+    --agent-deployer: #10b981;
+    --agent-documenter: #6366f1;
+
+    /* Semantic Colors */
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --info: #3b82f6;
+
+    /* Neutrals */
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+
+    /* Dark Mode */
+    --dark-base: #1a1a2e;
+    --dark-charcoal: #2d2d44;
+    --dark-slate: #4a4a5e;
+
+    /* Typography Scale (1.250 ratio) */
+    --text-xs: 0.64rem;
+    --text-sm: 0.8rem;
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.563rem;
+    --text-2xl: 1.953rem;
+    --text-3xl: 2.441rem;
+
+    /* Spacing Scale (4px base) */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+  }
+
+  * {
+    @apply antialiased;
   }
 
   body {
-    @apply antialiased;
+    @apply font-sans text-base text-gray-900;
+    @apply bg-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-2xl;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    @apply text-xl;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    @apply text-lg;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--cyril-teal);
+    outline-offset: 2px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
   }
 }
 
@@ -17,16 +114,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #1a1a1a;
+  background-color: var(--dark-base);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #3a3a3a;
+  background-color: var(--dark-slate);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #4a4a4a;
+  background-color: var(--cyril-teal);
 }
 
 /* Smooth scrolling */
@@ -36,8 +133,167 @@ html {
 
 /* Selection color */
 ::selection {
-  background-color: #6366f1;
+  background-color: var(--cyril-teal);
   color: white;
+}
+
+/* Code styling */
+code {
+  @apply rounded-sm px-1.5 py-0.5 font-mono text-sm;
+  background-color: rgba(45, 125, 142, 0.1);
+  color: #2D7D8E;
+}
+
+pre code {
+  @apply block rounded-md p-4;
+  background-color: #1A1A2E;
+  color: white;
+}
+
+/* Utility Classes */
+
+/* Button Base */
+.btn {
+  @apply inline-flex items-center justify-center gap-2;
+  @apply rounded-md px-5 py-3 text-base font-medium;
+  @apply transition-all duration-200;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2;
+}
+
+.btn-primary {
+  @apply text-white shadow-sm hover:shadow-md;
+  background-color: #2D7D8E;
+}
+
+.btn-primary:hover {
+  background-color: #3A8C9D;
+}
+
+.btn-primary:focus-visible {
+  outline-color: #2D7D8E;
+}
+
+.btn-secondary {
+  @apply border-2 bg-transparent;
+  color: #2D7D8E;
+  border-color: #2D7D8E;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(45, 125, 142, 0.1);
+}
+
+.btn-secondary:focus-visible {
+  outline-color: #2D7D8E;
+}
+
+.btn-destructive {
+  @apply text-white;
+  background-color: #EF4444;
+}
+
+.btn-destructive:hover {
+  background-color: #F87171;
+}
+
+.btn-destructive:focus-visible {
+  outline-color: #EF4444;
+}
+
+/* Card */
+.card {
+  @apply rounded-md border border-gray-200 bg-white p-6;
+  @apply shadow-sm transition-shadow hover:shadow-md;
+}
+
+/* Badge */
+.badge {
+  @apply inline-flex items-center gap-1.5 rounded px-2 py-1 text-xs font-medium;
+}
+
+.badge-success {
+  @apply border;
+  color: #10B981;
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.badge-error {
+  @apply border;
+  color: #EF4444;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.badge-warning {
+  @apply border;
+  color: #F59E0B;
+  background-color: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.badge-info {
+  @apply border;
+  color: #3B82F6;
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Agent-specific badges */
+.badge-architect {
+  @apply border;
+  color: #8B5CF6;
+  background-color: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.badge-researcher {
+  @apply border;
+  color: #F59E0B;
+  background-color: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.badge-implementer {
+  @apply border;
+  color: #14B8A6;
+  background-color: rgba(20, 184, 166, 0.1);
+  border-color: rgba(20, 184, 166, 0.2);
+}
+
+.badge-reviewer {
+  @apply border;
+  color: #0EA5E9;
+  background-color: rgba(14, 165, 233, 0.1);
+  border-color: rgba(14, 165, 233, 0.2);
+}
+
+.badge-tester {
+  @apply border;
+  color: #84CC16;
+  background-color: rgba(132, 204, 22, 0.1);
+  border-color: rgba(132, 204, 22, 0.2);
+}
+
+.badge-debugger {
+  @apply border;
+  color: #FB923C;
+  background-color: rgba(251, 146, 60, 0.1);
+  border-color: rgba(251, 146, 60, 0.2);
+}
+
+.badge-deployer {
+  @apply border;
+  color: #10B981;
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.badge-documenter {
+  @apply border;
+  color: #6366F1;
+  background-color: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.2);
 }
 
 /* Animations */
@@ -56,10 +312,30 @@ html {
   animation: fadeIn 0.6s ease-out;
 }
 
-/* Grid pattern for backgrounds */
-.bg-grid-pattern {
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
+@keyframes agentGlow {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+    opacity: 0.5;
+  }
+  50% {
+    box-shadow: 0 0 0 8px currentColor;
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 0 0 0 0 currentColor;
+    opacity: 1;
+  }
+}
+
+.agent-active {
+  animation: agentGlow 500ms ease-out forwards;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

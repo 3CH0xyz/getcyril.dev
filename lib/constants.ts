@@ -1,13 +1,14 @@
 /**
- * Constants for the Cyril marketing website.
- * Centralized content management for easy updates.
+ * Cyril Website Constants
+ * Design System: CYRIL_DESIGN_BIBLE.md v1.0.0
+ * Updated: 2025-10-22
  */
 
 export const SITE_CONFIG = {
   name: "Cyril",
-  tagline: "Claude's intelligent cousin",
+  tagline: "Claude's Intelligent Cousin",
   description:
-    "Meet Cyril - the intelligent multi-agent orchestration system that turns Claude Code into a production-ready development powerhouse. 8 specialist agents, universal crosspoints, and real implementation only.",
+    "Multi-agent orchestration for developers who demand more. Transform Claude Code into a coordinated team of 8 specialized agents working in perfect harmony.",
   url: "https://getcyril.dev",
   github: "https://github.com/3CH0xyz/Cyril-Dev",
   docs: "https://github.com/3CH0xyz/Cyril-Dev#readme",
@@ -19,58 +20,66 @@ export const AGENTS = [
   {
     id: "architect",
     name: "Architect",
-    role: "System Design",
+    role: "System design and architecture planning",
     icon: "🏗️",
-    description: "Designs scalable architectures and technical solutions",
+    color: "#8B5CF6", // Purple
+    description: "Designs scalable system architectures, database schemas, API structures, and deployment strategies.",
   },
   {
     id: "researcher",
     name: "Researcher",
-    role: "Discovery & Analysis",
+    role: "Deep codebase exploration and discovery",
     icon: "🔍",
-    description: "Explores codebases and finds best practices",
+    color: "#F59E0B", // Amber
+    description: "Explores codebases, discovers patterns, and researches best practices across the web.",
   },
   {
     id: "implementer",
     name: "Implementer",
-    role: "Code Generation",
-    icon: "⚙️",
-    description: "Writes production-quality code following SOLID principles",
-  },
-  {
-    id: "tester",
-    name: "Tester",
-    role: "Quality Assurance",
-    icon: "🧪",
-    description: "Creates comprehensive tests with high coverage",
+    role: "Production-ready code generation",
+    icon: "💻",
+    color: "#14B8A6", // Teal
+    description: "Generates clean, maintainable code following SOLID principles and industry best practices.",
   },
   {
     id: "reviewer",
     name: "Reviewer",
-    role: "Code Quality",
+    role: "Code quality and security auditing",
     icon: "👁️",
-    description: "Audits code for security, performance, and best practices",
+    color: "#0EA5E9", // Sky Blue
+    description: "Audits code for security vulnerabilities, performance issues, and adherence to best practices.",
+  },
+  {
+    id: "tester",
+    name: "Tester",
+    role: "Comprehensive test creation and execution",
+    icon: "🧪",
+    color: "#84CC16", // Lime
+    description: "Creates comprehensive test suites with high coverage, including unit and integration tests.",
   },
   {
     id: "debugger",
     name: "Debugger",
-    role: "Bug Diagnosis",
+    role: "Root cause analysis and bug fixes",
     icon: "🐛",
-    description: "Analyzes errors and implements minimal fixes",
+    color: "#FB923C", // Orange
+    description: "Diagnoses errors systematically, identifies root causes, and implements minimal, targeted fixes.",
   },
   {
     id: "deployer",
     name: "Deployer",
-    role: "Release Management",
+    role: "Automated deployment orchestration",
     icon: "🚀",
-    description: "Handles deployments with health checks and rollbacks",
+    color: "#10B981", // Emerald
+    description: "Handles deployments with health checks, monitoring, and automatic rollback capabilities.",
   },
   {
     id: "documenter",
     name: "Documenter",
-    role: "Documentation",
+    role: "API docs and technical writing",
     icon: "📝",
-    description: "Generates API docs and technical documentation",
+    color: "#6366F1", // Indigo
+    description: "Generates API documentation, README files, and technical explanations from code.",
   },
 ];
 
@@ -79,28 +88,28 @@ export const FEATURES = [
     id: "agents",
     title: "8 Specialist Agents",
     description:
-      "From architecture to deployment, each agent brings deep domain expertise to your development workflow.",
+      "Each agent brings deep domain expertise and 200k context to your development workflow. Automatic selection and coordination means you get the right specialist for every task.",
     icon: "🤖",
   },
   {
     id: "crosspoints",
     title: "Universal Crosspoints",
     description:
-      "Seamlessly integrate with Stripe, Vercel, SendGrid, Auth0, and more through a unified abstraction layer.",
+      "Seamlessly integrate with Stripe, Vercel, SendGrid, Auth0, and more through a unified abstraction layer that handles authentication, retries, and error handling.",
     icon: "🔌",
   },
   {
     id: "workflows",
     title: "Intelligent Workflows",
     description:
-      "Try-first protocol with smart escalation. Simple tasks complete in minutes, complex tasks get full orchestration.",
+      "Try-first protocol with smart escalation. Simple tasks complete in 5-10 minutes, complex tasks get full orchestration. Learn from every execution.",
     icon: "⚡",
   },
   {
     id: "real-implementation",
     title: "Real Implementation Only",
     description:
-      "No placeholders, no TODOs, no fake data. Every line of code is production-ready and fully functional.",
+      "No placeholders, no TODOs, no fake data. Every line of code is production-ready and fully functional. Security-first with comprehensive validation.",
     icon: "✨",
   },
 ];
@@ -109,45 +118,45 @@ export const HOW_IT_WORKS = [
   {
     step: 1,
     title: "Install Cyril",
-    description: "Clone the repository and set up your environment with credentials",
-    command: "git clone https://github.com/3CH0xyz/Cyril-Dev.git",
+    description: "Clone the repository and set up your environment in minutes",
+    icon: "📦",
   },
   {
     step: 2,
-    title: "Configure Agents",
-    description: "Add API keys to .env.local and let crosspoints auto-detect integrations",
-    command: "cp .env.example .env.local",
+    title: "Configure Crosspoints",
+    description: "Add API keys to your environment - crosspoints auto-detect integrations",
+    icon: "🔑",
   },
   {
     step: 3,
     title: "Build Faster",
     description: "Use slash commands or natural language to orchestrate multi-agent workflows",
-    command: '/cyril-feature "Add payment processing"',
+    icon: "🚀",
   },
 ];
 
-export const CODE_EXAMPLE = `import asyncio
-from cyril.crosspoints.adapters.stripe_adapter import StripeAdapter
+export const CODE_EXAMPLE = `from cyril.crosspoints.adapters.stripe_adapter import StripeAdapter
+import asyncio
 
 async def main():
-    # Real Stripe integration - no mocks
+    # Real Stripe integration - no mocks, no placeholders
     adapter = StripeAdapter()
 
-    # Create payment intent
+    # Create payment intent with full validation
     payment = await adapter.create_payment_intent(
         amount=1999,
         currency="usd",
         customer_id="cus_abc123"
     )
 
-    print(f"✅ Payment created: {payment['id']}")
-    print(f"💰 Amount: $" + f"{payment['amount'] / 100:.2f}")
+    print(f"✅ Payment created: " + payment['id'])
+    print(f"💰 Amount: $" + str(payment['amount'] / 100))
 
 asyncio.run(main())`;
 
 export const STATS = {
   agents: 8,
-  workflows: 6,
+  workflows: 7,
   crosspoints: "12+",
   testCoverage: "87%",
 };
