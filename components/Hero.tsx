@@ -24,7 +24,10 @@ export default function Hero() {
       <div className="container relative mx-auto px-6 py-24 sm:py-32 lg:py-40">
         <div className="mx-auto max-w-4xl text-center">
           {/* Version Badge - Glassmorphism with orange status dot */}
-          <div className="mb-8 inline-flex items-center rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-4 py-1.5 text-sm font-medium shadow-2xl shadow-black/50 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+          <div
+            className="mb-8 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium shadow-2xl shadow-black/50 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+            style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
+          >
             <div className="mr-2 h-2 w-2 rounded-full bg-cyril-orange animate-pulse shadow-lg shadow-cyril-orange/50"></div>
             <span className="text-dark-text-secondary">Version 2.1.0 - Production Ready</span>
           </div>

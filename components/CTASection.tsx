@@ -20,7 +20,10 @@ export default function CTASection() {
       <div className="container relative mx-auto px-6">
         <div className="mx-auto max-w-3xl">
           {/* Glass CTA Card */}
-          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-12 shadow-2xl shadow-black/50 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-center relative overflow-hidden">
+          <div
+            className="rounded-2xl border border-white/10 bg-white/5 p-12 shadow-2xl shadow-black/50 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-center relative overflow-hidden"
+            style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
+          >
             {/* Inner gradient orb for extra depth */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-cyril-orange/20 to-transparent rounded-full blur-3xl pointer-events-none" />
 

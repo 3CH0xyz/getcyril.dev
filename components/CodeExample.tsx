@@ -29,9 +29,15 @@ export default function CodeExample() {
 
         {/* Code Block - Glassmorphism */}
         <div className="mx-auto max-w-4xl">
-          <div className="overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl shadow-black/50">
+          <div
+            className="overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-2xl shadow-black/50"
+            style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
+          >
             {/* Terminal Header - Glass effect */}
-            <div className="flex items-center justify-between border-b border-white/10 bg-white/5 backdrop-blur-sm px-6 py-4">
+            <div
+              className="flex items-center justify-between border-b border-white/10 bg-white/5 px-6 py-4"
+              style={{ backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)' }}
+            >
               <div className="flex items-center gap-3">
                 {/* macOS traffic light dots */}
                 <div className="flex gap-2">
@@ -125,7 +131,10 @@ export default function CodeExample() {
 
           {/* Code Features - Glassmorphism */}
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-4 text-center shadow-xl shadow-black/30 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+            <div
+              className="rounded-xl border border-white/10 bg-white/5 p-4 text-center shadow-xl shadow-black/30 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+              style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
+            >
               <div className="mb-2 flex justify-center">
                 <Sparkles className="h-8 w-8 text-cyril-orange" />
               </div>
@@ -136,7 +145,10 @@ export default function CodeExample() {
                 No mocks or placeholders
               </div>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-4 text-center shadow-xl shadow-black/30 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+            <div
+              className="rounded-xl border border-white/10 bg-white/5 p-4 text-center shadow-xl shadow-black/30 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+              style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
+            >
               <div className="mb-2 flex justify-center">
                 <Shield className="h-8 w-8 text-success" />
               </div>
@@ -147,7 +159,10 @@ export default function CodeExample() {
                 Full error handling
               </div>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-4 text-center shadow-xl shadow-black/30 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+            <div
+              className="rounded-xl border border-white/10 bg-white/5 p-4 text-center shadow-xl shadow-black/30 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+              style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
+            >
               <div className="mb-2 flex justify-center">
                 <Zap className="h-8 w-8 text-warning" />
               </div>

@@ -40,7 +40,10 @@ export default function HowItWorks() {
                 }`}
               >
                 {/* Step Circle - Glass effect with orange background */}
-                <div className="z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-full border-4 border-dark-bg bg-cyril-orange text-white shadow-2xl shadow-cyril-orange/50 lg:absolute lg:left-1/2 lg:-translate-x-1/2 backdrop-blur-sm">
+                <div
+                  className="z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-full border-4 border-dark-bg bg-cyril-orange text-white shadow-2xl shadow-cyril-orange/50 lg:absolute lg:left-1/2 lg:-translate-x-1/2"
+                  style={{ backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)' }}
+                >
                   {(() => {
                     const IconComponent = getIcon(item.icon);
                     return <IconComponent size={32} strokeWidth={2} />;
@@ -53,7 +56,10 @@ export default function HowItWorks() {
                     index % 2 === 0 ? "lg:mr-auto" : "lg:ml-auto"
                   }`}
                 >
-                  <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 shadow-2xl shadow-black/50 transition-all duration-300 hover:bg-white/10 hover:border-cyril-orange/30">
+                  <div
+                    className="rounded-xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/50 transition-all duration-300 hover:bg-white/10 hover:border-cyril-orange/30"
+                    style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
+                  >
                     <div className="mb-2 text-sm font-semibold text-cyril-orange">
                       Step {item.step}
                     </div>
