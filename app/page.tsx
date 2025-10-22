@@ -14,8 +14,8 @@ export default function Home() {
       <div
         className="relative min-h-screen"
         style={{
-          backdropFilter: 'blur(80px) saturate(150%)',
-          WebkitBackdropFilter: 'blur(80px) saturate(150%)',
+          backdropFilter: 'blur(40px) saturate(150%)',
+          WebkitBackdropFilter: 'blur(40px) saturate(150%)',
         }}
       >
         <main className="min-h-screen">

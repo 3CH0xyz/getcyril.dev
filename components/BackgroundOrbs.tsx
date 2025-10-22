@@ -3,50 +3,107 @@ export default function BackgroundOrbs() {
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
       {/* Large orange orb - top left */}
       <div
-        className="absolute w-[600px] h-[600px] bg-gradient-radial from-cyril-orange/40 via-cyril-orange/20 to-transparent rounded-full blur-3xl animate-float-slow"
-        style={{ top: '-200px', left: '-200px', willChange: 'transform' }}
+        className="absolute w-[800px] h-[800px] rounded-full blur-2xl animate-float-slow"
+        style={{
+          top: '-300px',
+          left: '-300px',
+          background: 'radial-gradient(circle, rgba(217, 119, 87, 0.7) 0%, rgba(217, 119, 87, 0.4) 40%, transparent 70%)',
+          willChange: 'transform'
+        }}
       />
 
       {/* Purple orb - top right (Architect) */}
       <div
-        className="absolute w-[500px] h-[500px] bg-gradient-radial from-agent-architect/30 via-agent-architect/15 to-transparent rounded-full blur-3xl animate-float-slower"
-        style={{ top: '100px', right: '-150px', willChange: 'transform' }}
+        className="absolute w-[700px] h-[700px] rounded-full blur-2xl animate-float-slower"
+        style={{
+          top: '0px',
+          right: '-250px',
+          background: 'radial-gradient(circle, rgba(139, 92, 246, 0.65) 0%, rgba(139, 92, 246, 0.35) 40%, transparent 70%)',
+          willChange: 'transform'
+        }}
       />
 
       {/* Teal orb - center left (Implementer) */}
       <div
-        className="absolute w-[700px] h-[700px] bg-gradient-radial from-agent-implementer/35 via-agent-implementer/18 to-transparent rounded-full blur-3xl animate-float"
-        style={{ top: '40%', left: '-250px', willChange: 'transform' }}
+        className="absolute w-[900px] h-[900px] rounded-full blur-2xl animate-float"
+        style={{
+          top: '35%',
+          left: '-350px',
+          background: 'radial-gradient(circle, rgba(20, 184, 166, 0.7) 0%, rgba(20, 184, 166, 0.4) 40%, transparent 70%)',
+          willChange: 'transform'
+        }}
       />
 
       {/* Amber orb - center right (Researcher) */}
       <div
-        className="absolute w-[550px] h-[550px] bg-gradient-radial from-agent-researcher/30 via-agent-researcher/15 to-transparent rounded-full blur-3xl animate-float-slow"
-        style={{ top: '50%', right: '-200px', willChange: 'transform', animationDelay: '5s' }}
+        className="absolute w-[750px] h-[750px] rounded-full blur-2xl animate-float-slow"
+        style={{
+          top: '45%',
+          right: '-280px',
+          background: 'radial-gradient(circle, rgba(245, 158, 11, 0.65) 0%, rgba(245, 158, 11, 0.35) 40%, transparent 70%)',
+          animationDelay: '5s',
+          willChange: 'transform'
+        }}
       />
 
       {/* Emerald orb - bottom left (Deployer) */}
       <div
-        className="absolute w-[650px] h-[650px] bg-gradient-radial from-agent-deployer/35 via-agent-deployer/18 to-transparent rounded-full blur-3xl animate-float-slower"
-        style={{ bottom: '10%', left: '15%', willChange: 'transform', animationDelay: '8s' }}
+        className="absolute w-[850px] h-[850px] rounded-full blur-2xl animate-float-slower"
+        style={{
+          bottom: '5%',
+          left: '10%',
+          background: 'radial-gradient(circle, rgba(16, 185, 129, 0.7) 0%, rgba(16, 185, 129, 0.4) 40%, transparent 70%)',
+          animationDelay: '8s',
+          willChange: 'transform'
+        }}
       />
 
       {/* Indigo orb - bottom right (Documenter) */}
       <div
-        className="absolute w-[600px] h-[600px] bg-gradient-radial from-agent-documenter/30 via-agent-documenter/15 to-transparent rounded-full blur-3xl animate-float"
-        style={{ bottom: '-100px', right: '10%', willChange: 'transform', animationDelay: '3s' }}
+        className="absolute w-[800px] h-[800px] rounded-full blur-2xl animate-float"
+        style={{
+          bottom: '-200px',
+          right: '5%',
+          background: 'radial-gradient(circle, rgba(99, 102, 241, 0.65) 0%, rgba(99, 102, 241, 0.35) 40%, transparent 70%)',
+          animationDelay: '3s',
+          willChange: 'transform'
+        }}
       />
 
       {/* Sky blue orb - middle (Reviewer) */}
       <div
-        className="absolute w-[500px] h-[500px] bg-gradient-radial from-agent-reviewer/25 via-agent-reviewer/12 to-transparent rounded-full blur-3xl animate-float-slow"
-        style={{ top: '60%', left: '50%', transform: 'translateX(-50%)', willChange: 'transform', animationDelay: '10s' }}
+        className="absolute w-[700px] h-[700px] rounded-full blur-2xl animate-float-slow"
+        style={{
+          top: '55%',
+          left: '45%',
+          background: 'radial-gradient(circle, rgba(14, 165, 233, 0.6) 0%, rgba(14, 165, 233, 0.3) 40%, transparent 70%)',
+          animationDelay: '10s',
+          willChange: 'transform'
+        }}
       />
 
       {/* Lime orb - upper center (Tester) */}
       <div
-        className="absolute w-[550px] h-[550px] bg-gradient-radial from-agent-tester/28 via-agent-tester/14 to-transparent rounded-full blur-3xl animate-drift"
-        style={{ top: '25%', left: '60%', willChange: 'transform', animationDelay: '6s' }}
+        className="absolute w-[750px] h-[750px] rounded-full blur-2xl animate-drift"
+        style={{
+          top: '20%',
+          left: '55%',
+          background: 'radial-gradient(circle, rgba(132, 204, 22, 0.65) 0%, rgba(132, 204, 22, 0.35) 40%, transparent 70%)',
+          animationDelay: '6s',
+          willChange: 'transform'
+        }}
+      />
+
+      {/* Additional large orange orb - bottom center for more depth */}
+      <div
+        className="absolute w-[950px] h-[950px] rounded-full blur-3xl animate-float-slower"
+        style={{
+          bottom: '-400px',
+          left: '30%',
+          background: 'radial-gradient(circle, rgba(217, 119, 87, 0.5) 0%, rgba(217, 119, 87, 0.25) 40%, transparent 70%)',
+          animationDelay: '12s',
+          willChange: 'transform'
+        }}
       />
     </div>
   );
