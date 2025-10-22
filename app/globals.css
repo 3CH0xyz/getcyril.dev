@@ -331,35 +331,35 @@ pre code {
   animation: agentGlow 500ms ease-out forwards;
 }
 
-/* Backdrop Blur Utilities */
-@layer utilities {
+/* Glassmorphism Backdrop Blur Utilities with Vendor Prefixes */
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
   .backdrop-blur-xs {
-    backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
   }
   .backdrop-blur-sm {
-    backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
   }
   .backdrop-blur-md {
-    backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
   }
   .backdrop-blur-lg {
-    backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
   }
   .backdrop-blur-xl {
-    backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
   }
   .backdrop-blur-2xl {
-    backdrop-filter: blur(32px);
     -webkit-backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px);
   }
   .backdrop-blur-3xl {
-    backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
   }
 }
 
