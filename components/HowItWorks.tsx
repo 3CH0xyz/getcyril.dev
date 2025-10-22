@@ -57,7 +57,7 @@ export default function HowItWorks() {
                   }`}
                 >
                   <div
-                    className="rounded-xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/50 transition-all duration-300 hover:bg-white/10 hover:border-cyril-orange/30"
+                    className="rounded-xl border border-white/10 bg-white/10 p-8 shadow-2xl shadow-black/50 transition-all duration-300 hover:bg-white/15 hover:border-cyril-orange/30"
                     style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
                   >
                     <div className="mb-2 text-sm font-semibold text-cyril-orange">

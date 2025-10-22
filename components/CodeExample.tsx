@@ -30,7 +30,7 @@ export default function CodeExample() {
         {/* Code Block - Glassmorphism */}
         <div className="mx-auto max-w-4xl">
           <div
-            className="overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-2xl shadow-black/50"
+            className="overflow-hidden rounded-xl border border-white/10 bg-white/10 shadow-2xl shadow-black/50"
             style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
           >
             {/* Terminal Header - Glass effect */}
@@ -132,7 +132,7 @@ export default function CodeExample() {
           {/* Code Features - Glassmorphism */}
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             <div
-              className="rounded-xl border border-white/10 bg-white/5 p-4 text-center shadow-xl shadow-black/30 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+              className="rounded-xl border border-white/10 bg-white/10 p-4 text-center shadow-xl shadow-black/30 hover:bg-white/15 hover:border-white/20 transition-all duration-300"
               style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
             >
               <div className="mb-2 flex justify-center">
@@ -146,7 +146,7 @@ export default function CodeExample() {
               </div>
             </div>
             <div
-              className="rounded-xl border border-white/10 bg-white/5 p-4 text-center shadow-xl shadow-black/30 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+              className="rounded-xl border border-white/10 bg-white/10 p-4 text-center shadow-xl shadow-black/30 hover:bg-white/15 hover:border-white/20 transition-all duration-300"
               style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
             >
               <div className="mb-2 flex justify-center">
@@ -160,7 +160,7 @@ export default function CodeExample() {
               </div>
             </div>
             <div
-              className="rounded-xl border border-white/10 bg-white/5 p-4 text-center shadow-xl shadow-black/30 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+              className="rounded-xl border border-white/10 bg-white/10 p-4 text-center shadow-xl shadow-black/30 hover:bg-white/15 hover:border-white/20 transition-all duration-300"
               style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
             >
               <div className="mb-2 flex justify-center">

@@ -32,7 +32,7 @@ export default function FeatureGrid() {
           {FEATURES.map((feature, index) => (
             <div
               key={feature.id}
-              className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/50 transition-all duration-300 hover:bg-white/10 hover:border-cyril-orange/30"
+              className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/10 p-8 shadow-2xl shadow-black/50 transition-all duration-300 hover:bg-white/15 hover:border-cyril-orange/30"
               style={{
                 animationDelay: `${index * 100}ms`,
                 backdropFilter: 'blur(24px)',

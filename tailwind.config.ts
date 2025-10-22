@@ -9,6 +9,9 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
       colors: {
         // Dark Mode System (Anthropic-inspired)
         'dark-bg': '#0f0f0f',
@@ -119,9 +122,10 @@ const config: Config = {
         "scale-up": "scaleUp 200ms ease-out",
         pulse: "pulse 2s ease-in-out infinite",
         spin: "spin 1s linear infinite",
-        "float-slow": "float 20s ease-in-out infinite",
-        "float-slower": "float 25s ease-in-out infinite",
-        float: "float 15s ease-in-out infinite",
+        "float-slow": "floatSlow 25s ease-in-out infinite",
+        "float-slower": "floatSlower 30s ease-in-out infinite",
+        float: "float 20s ease-in-out infinite",
+        drift: "drift 35s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -144,6 +148,21 @@ const config: Config = {
           "0%, 100%": { transform: "translate(0, 0) scale(1)" },
           "33%": { transform: "translate(30px, -30px) scale(1.05)" },
           "66%": { transform: "translate(-20px, 20px) scale(0.95)" },
+        },
+        floatSlow: {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "25%": { transform: "translate(40px, -40px) scale(1.08)" },
+          "50%": { transform: "translate(-30px, 30px) scale(0.92)" },
+          "75%": { transform: "translate(30px, 20px) scale(1.05)" },
+        },
+        floatSlower: {
+          "0%, 100%": { transform: "translate(0, 0) scale(1) rotate(0deg)" },
+          "33%": { transform: "translate(-50px, 40px) scale(1.1) rotate(5deg)" },
+          "66%": { transform: "translate(40px, -30px) scale(0.9) rotate(-5deg)" },
+        },
+        drift: {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "50%": { transform: "translate(100px, -100px) scale(1.15)" },
         },
       },
     },
