@@ -39,21 +39,21 @@ export default function HowItWorks() {
                   index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
               >
-                {/* Step Circle - Orange background */}
-                <div className="z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-full border-4 border-dark-bg bg-cyril-orange text-white shadow-lg lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+                {/* Step Circle - Glass effect with orange background */}
+                <div className="z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-full border-4 border-dark-bg bg-cyril-orange text-white shadow-2xl shadow-cyril-orange/50 lg:absolute lg:left-1/2 lg:-translate-x-1/2 backdrop-blur-sm">
                   {(() => {
                     const IconComponent = getIcon(item.icon);
                     return <IconComponent size={32} strokeWidth={2} />;
                   })()}
                 </div>
 
-                {/* Content Card - Dark surface */}
+                {/* Content Card - Glassmorphism */}
                 <div
                   className={`w-full lg:w-5/12 ${
                     index % 2 === 0 ? "lg:mr-auto" : "lg:ml-auto"
                   }`}
                 >
-                  <div className="rounded-lg border border-dark-border bg-dark-surface p-8 shadow-sm transition-shadow hover:shadow-md hover:border-cyril-orange/50">
+                  <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 shadow-2xl shadow-black/50 transition-all duration-300 hover:bg-white/10 hover:border-cyril-orange/30">
                     <div className="mb-2 text-sm font-semibold text-cyril-orange">
                       Step {item.step}
                     </div>

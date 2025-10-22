@@ -331,11 +331,50 @@ pre code {
   animation: agentGlow 500ms ease-out forwards;
 }
 
+/* Backdrop Blur Utilities */
+@layer utilities {
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .backdrop-blur-md {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+  .backdrop-blur-2xl {
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+  }
+  .backdrop-blur-3xl {
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+  }
+}
+
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  /* Disable float animations specifically */
+  .animate-float-slow,
+  .animate-float-slower,
+  .animate-float {
+    animation: none !important;
   }
 }

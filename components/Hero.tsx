@@ -9,11 +9,23 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IndoaXRlIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')]"></div>
       </div>
 
+      {/* Animated Gradient Orbs Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Orange gradient orb (Cyril primary color) */}
+        <div className="absolute w-96 h-96 bg-gradient-to-br from-cyril-orange/30 to-cyril-orange/10 rounded-full blur-3xl animate-float-slow top-20 -left-20" style={{ willChange: 'transform' }} />
+
+        {/* Purple gradient orb (Architect agent color) */}
+        <div className="absolute w-80 h-80 bg-gradient-to-br from-agent-architect/20 to-agent-architect/5 rounded-full blur-3xl animate-float-slower top-40 right-10" style={{ willChange: 'transform' }} />
+
+        {/* Teal gradient orb (Implementer agent color) */}
+        <div className="absolute w-72 h-72 bg-gradient-to-br from-agent-implementer/20 to-agent-implementer/5 rounded-full blur-3xl animate-float bottom-20 left-1/3" style={{ willChange: 'transform' }} />
+      </div>
+
       <div className="container relative mx-auto px-6 py-24 sm:py-32 lg:py-40">
         <div className="mx-auto max-w-4xl text-center">
-          {/* Version Badge - Dark surface with orange status dot */}
-          <div className="mb-8 inline-flex items-center rounded-full border border-dark-border bg-dark-surface px-4 py-1.5 text-sm font-medium backdrop-blur-sm shadow-lg">
-            <div className="mr-2 h-2 w-2 rounded-full bg-cyril-orange animate-pulse"></div>
+          {/* Version Badge - Glassmorphism with orange status dot */}
+          <div className="mb-8 inline-flex items-center rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-4 py-1.5 text-sm font-medium shadow-2xl shadow-black/50 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+            <div className="mr-2 h-2 w-2 rounded-full bg-cyril-orange animate-pulse shadow-lg shadow-cyril-orange/50"></div>
             <span className="text-dark-text-secondary">Version 2.1.0 - Production Ready</span>
           </div>
 

@@ -39,23 +39,32 @@ export default function AgentShowcase() {
           {AGENTS.map((agent, index) => (
             <div
               key={agent.id}
-              className="group relative overflow-hidden rounded-lg border border-dark-border bg-dark-surface p-8 shadow-sm transition-all hover:border-opacity-100 hover:shadow-lg"
+              className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 shadow-2xl shadow-black/50 transition-all duration-300 hover:bg-white/10 hover:border-white/20"
               style={{
                 animationDelay: `${index * 75}ms`,
                 ['--agent-color' as string]: agent.color,
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = agent.color;
+                e.currentTarget.style.boxShadow = `0 25px 50px -12px ${agent.color}20`;
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = '';
+                e.currentTarget.style.boxShadow = '';
               }}
             >
-              {/* Agent Icon Circle - Agent color at 10% opacity background */}
+              {/* Gradient accent line */}
               <div
-                className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full text-white"
+                className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b to-transparent"
+                style={{ backgroundColor: agent.color }}
+              />
+
+              {/* Agent Icon Circle - Glass effect with agent color */}
+              <div
+                className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full text-white backdrop-blur-sm border"
                 style={{
                   backgroundColor: `${agent.color}20`,
+                  borderColor: `${agent.color}40`,
                 }}
               >
                 <div style={{ color: agent.color }}>
@@ -93,8 +102,8 @@ export default function AgentShowcase() {
           ))}
         </div>
 
-        {/* Agent Formation Visual */}
-        <div className="mt-16 rounded-lg border border-dark-border bg-dark-surface p-8 text-center">
+        {/* Agent Formation Visual - Glassmorphism */}
+        <div className="mt-16 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 text-center shadow-2xl shadow-black/50 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
           <p className="mb-6 text-sm font-medium uppercase tracking-wide text-dark-text-secondary">
             Orchestrated Agent Formation
           </p>

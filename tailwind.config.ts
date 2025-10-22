@@ -119,6 +119,9 @@ const config: Config = {
         "scale-up": "scaleUp 200ms ease-out",
         pulse: "pulse 2s ease-in-out infinite",
         spin: "spin 1s linear infinite",
+        "float-slow": "float 20s ease-in-out infinite",
+        "float-slower": "float 25s ease-in-out infinite",
+        float: "float 15s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -136,6 +139,11 @@ const config: Config = {
         pulse: {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.5" },
+        },
+        float: {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(30px, -30px) scale(1.05)" },
+          "66%": { transform: "translate(-20px, 20px) scale(0.95)" },
         },
       },
     },

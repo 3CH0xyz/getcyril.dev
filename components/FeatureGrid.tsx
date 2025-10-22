@@ -32,11 +32,11 @@ export default function FeatureGrid() {
           {FEATURES.map((feature, index) => (
             <div
               key={feature.id}
-              className="group relative overflow-hidden rounded-lg border border-dark-border bg-dark-bg p-8 shadow-sm transition-all hover:border-cyril-orange/50 hover:shadow-lg"
+              className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 shadow-2xl shadow-black/50 transition-all duration-300 hover:bg-white/10 hover:border-cyril-orange/30"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Icon - Orange background */}
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-cyril-orange/10 text-cyril-orange">
+              {/* Icon - Glass background with orange accent */}
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-cyril-orange/10 backdrop-blur-sm border border-cyril-orange/20 text-cyril-orange">
                 {(() => {
                   const IconComponent = getIcon(feature.icon);
                   return <IconComponent size={32} strokeWidth={2} />;
@@ -64,7 +64,7 @@ export default function FeatureGrid() {
           <p className="mb-6 text-lg text-dark-text-secondary">
             Real implementation, real integrations, real production-ready code.
           </p>
-          <div className="inline-flex items-center gap-2 rounded-full bg-success/10 border border-success/20 px-4 py-2 text-sm font-semibold text-success">
+          <div className="inline-flex items-center gap-2 rounded-full bg-success/10 backdrop-blur-xl border border-success/20 px-4 py-2 text-sm font-semibold text-success shadow-lg shadow-success/10 hover:bg-success/20 hover:border-success/30 transition-all duration-300">
             <svg
               className="h-5 w-5"
               fill="none"
