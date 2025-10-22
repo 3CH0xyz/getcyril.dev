@@ -2,9 +2,17 @@
 
 @layer base {
   :root {
-    /* Cyril Brand Colors */
-    --cyril-teal: #2d7d8e;
-    --cyril-orange: #c15f3c;
+    /* Dark Mode Colors (Anthropic-inspired) */
+    --dark-bg: #0f0f0f;
+    --dark-surface: #1a1a1a;
+    --dark-border: #2a2a2a;
+    --dark-text: #f5f5f5;
+    --dark-text-secondary: #d0d0d0;
+
+    /* Cyril Brand Colors - Orange Primary */
+    --cyril-orange: #d97757;
+    --cyril-orange-light: #e08862;
+    --cyril-orange-dark: #c86847;
 
     /* Agent Colors */
     --agent-architect: #8b5cf6;
@@ -22,70 +30,50 @@
     --error: #ef4444;
     --info: #3b82f6;
 
-    /* Neutrals */
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
+    /* Terminal Chrome */
+    --terminal-red: #ff5f57;
+    --terminal-yellow: #ffbd2e;
+    --terminal-green: #28ca42;
 
-    /* Dark Mode */
-    --dark-base: #1a1a2e;
-    --dark-charcoal: #2d2d44;
-    --dark-slate: #4a4a5e;
-
-    /* Typography Scale (1.250 ratio) */
-    --text-xs: 0.64rem;
-    --text-sm: 0.8rem;
-    --text-base: 1rem;
-    --text-lg: 1.25rem;
-    --text-xl: 1.563rem;
-    --text-2xl: 1.953rem;
-    --text-3xl: 2.441rem;
-
-    /* Spacing Scale (4px base) */
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-5: 1.25rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
-    --space-10: 2.5rem;
-    --space-12: 3rem;
-    --space-16: 4rem;
-    --space-20: 5rem;
-    --space-24: 6rem;
+    /* Syntax Highlighting */
+    --syntax-keyword: #d97757;
+    --syntax-string: #4ade80;
+    --syntax-comment: #616161;
+    --syntax-function: #60a5fa;
   }
+
+  /* Dark mode is the default - applied in layout.tsx */
 
   * {
     @apply antialiased;
   }
 
   body {
-    @apply font-sans text-base text-gray-900;
-    @apply bg-white;
+    @apply font-sans text-base;
+    background-color: #0f0f0f;
+    color: #d0d0d0;
   }
 
+  /* Typography - Semi-bold headers (not bold) */
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply font-bold;
+    @apply font-semibold;
+    color: #f5f5f5;
   }
 
   h1 {
-    @apply text-2xl;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.25;
     letter-spacing: -0.02em;
   }
 
   h2 {
-    @apply text-xl;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.25;
     letter-spacing: -0.01em;
   }
 
@@ -97,9 +85,19 @@
     @apply text-lg;
   }
 
-  /* Focus styles for accessibility */
+  /* Links with orange accent */
+  a {
+    @apply transition-colors;
+    color: #d97757;
+  }
+
+  a:hover {
+    color: #e08862;
+  }
+
+  /* Focus styles for accessibility - Orange rings */
   :focus-visible {
-    outline: 2px solid var(--cyril-teal);
+    outline: 2px solid var(--cyril-orange);
     outline-offset: 2px;
   }
 
@@ -108,22 +106,22 @@
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Dark theme */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--dark-base);
+  background-color: var(--dark-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--dark-slate);
+  background-color: var(--dark-border);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--cyril-teal);
+  background-color: var(--cyril-orange);
 }
 
 /* Smooth scrolling */
@@ -131,23 +129,23 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Selection color */
+/* Selection color - Orange */
 ::selection {
-  background-color: var(--cyril-teal);
+  background-color: var(--cyril-orange);
   color: white;
 }
 
-/* Code styling */
+/* Code styling - Terminal aesthetic */
 code {
   @apply rounded-sm px-1.5 py-0.5 font-mono text-sm;
-  background-color: rgba(45, 125, 142, 0.1);
-  color: #2D7D8E;
+  background-color: rgba(217, 119, 87, 0.1);
+  color: #d97757;
 }
 
 pre code {
   @apply block rounded-md p-4;
-  background-color: #1A1A2E;
-  color: white;
+  background-color: #1a1a1a;
+  color: #d0d0d0;
 }
 
 /* Utility Classes */
@@ -162,29 +160,29 @@ pre code {
 
 .btn-primary {
   @apply text-white shadow-sm hover:shadow-md;
-  background-color: #2D7D8E;
+  background-color: #d97757;
 }
 
 .btn-primary:hover {
-  background-color: #3A8C9D;
+  background-color: #e08862;
 }
 
 .btn-primary:focus-visible {
-  outline-color: #2D7D8E;
+  outline-color: #d97757;
 }
 
 .btn-secondary {
   @apply border-2 bg-transparent;
-  color: #2D7D8E;
-  border-color: #2D7D8E;
+  color: #d97757;
+  border-color: #d97757;
 }
 
 .btn-secondary:hover {
-  background-color: rgba(45, 125, 142, 0.1);
+  background-color: rgba(217, 119, 87, 0.1);
 }
 
 .btn-secondary:focus-visible {
-  outline-color: #2D7D8E;
+  outline-color: #d97757;
 }
 
 .btn-destructive {
@@ -200,10 +198,12 @@ pre code {
   outline-color: #EF4444;
 }
 
-/* Card */
+/* Card - Dark surface */
 .card {
-  @apply rounded-md border border-gray-200 bg-white p-6;
+  @apply rounded-md border p-8;
   @apply shadow-sm transition-shadow hover:shadow-md;
+  background-color: #1a1a1a;
+  border-color: #2a2a2a;
 }
 
 /* Badge */

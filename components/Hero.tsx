@@ -3,45 +3,42 @@ import { Sparkles, BookOpen } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-cyril-teal via-cyril-teal/90 to-blue-600 text-white">
-      {/* Dark overlay for better text contrast */}
-      <div className="absolute inset-0 bg-black/30"></div>
-
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] bg-repeat"></div>
+    <section className="relative overflow-hidden bg-dark-bg text-white">
+      {/* Minimal dot grid pattern (3% opacity) */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IndoaXRlIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')]"></div>
       </div>
 
       <div className="container relative mx-auto px-6 py-24 sm:py-32 lg:py-40">
         <div className="mx-auto max-w-4xl text-center">
-          {/* Version Badge */}
-          <div className="mb-8 inline-flex items-center rounded-full border border-white/30 bg-white/15 px-4 py-1.5 text-sm font-medium backdrop-blur-sm shadow-lg">
-            <Sparkles className="mr-2 h-4 w-4" />
-            <span>Version 2.1.0 - Production Ready</span>
+          {/* Version Badge - Dark surface with orange status dot */}
+          <div className="mb-8 inline-flex items-center rounded-full border border-dark-border bg-dark-surface px-4 py-1.5 text-sm font-medium backdrop-blur-sm shadow-lg">
+            <div className="mr-2 h-2 w-2 rounded-full bg-cyril-orange animate-pulse"></div>
+            <span className="text-dark-text-secondary">Version 2.1.0 - Production Ready</span>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl drop-shadow-lg">
+          {/* Main Headline - Semi-bold with responsive clamp */}
+          <h1 className="mb-6 text-dark-text font-semibold tracking-tight drop-shadow-lg">
             {SITE_CONFIG.tagline}
           </h1>
 
           {/* Subheadline */}
-          <p className="mb-4 text-xl font-semibold sm:text-2xl drop-shadow-md">
+          <p className="mb-4 text-xl font-semibold text-dark-text sm:text-2xl drop-shadow-md">
             {SITE_CONFIG.description}
           </p>
 
           {/* Supporting text */}
-          <p className="mb-10 text-lg leading-relaxed text-white/95 sm:text-xl max-w-3xl mx-auto drop-shadow-md">
+          <p className="mb-10 text-lg leading-relaxed text-dark-text-secondary sm:text-xl max-w-3xl mx-auto">
             Just tell Cyril what you want. Everything else happens automatically.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - Orange primary, bordered secondary */}
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href={SITE_CONFIG.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-white px-8 py-4 text-lg font-semibold text-cyril-teal transition-all hover:scale-105 hover:bg-white/95 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="inline-flex items-center gap-2 rounded-md bg-cyril-orange px-8 py-4 text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-cyril-orange-light hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyril-orange"
             >
               <svg
                 className="h-6 w-6"
@@ -61,7 +58,7 @@ export default function Hero() {
               href={SITE_CONFIG.docs}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md border-2 border-white bg-transparent px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="inline-flex items-center gap-2 rounded-md border-2 border-cyril-orange bg-transparent px-8 py-4 text-lg font-semibold text-cyril-orange transition-all hover:bg-cyril-orange/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyril-orange"
             >
               <BookOpen className="h-5 w-5" />
               View Documentation
@@ -71,26 +68,26 @@ export default function Hero() {
           {/* Stats Grid */}
           <div className="mt-20 grid grid-cols-2 gap-8 sm:grid-cols-4">
             <div className="animate-fadeIn">
-              <div className="text-4xl font-bold">{STATS.agents}</div>
-              <div className="mt-2 text-sm font-medium text-white/70 uppercase tracking-wide">
+              <div className="text-4xl font-semibold text-dark-text">{STATS.agents}</div>
+              <div className="mt-2 text-sm font-medium text-dark-text-secondary uppercase tracking-wide">
                 Specialist Agents
               </div>
             </div>
             <div className="animate-fadeIn" style={{ animationDelay: "100ms" }}>
-              <div className="text-4xl font-bold">{STATS.workflows}</div>
-              <div className="mt-2 text-sm font-medium text-white/70 uppercase tracking-wide">
+              <div className="text-4xl font-semibold text-dark-text">{STATS.workflows}</div>
+              <div className="mt-2 text-sm font-medium text-dark-text-secondary uppercase tracking-wide">
                 Workflows
               </div>
             </div>
             <div className="animate-fadeIn" style={{ animationDelay: "200ms" }}>
-              <div className="text-4xl font-bold">{STATS.crosspoints}</div>
-              <div className="mt-2 text-sm font-medium text-white/70 uppercase tracking-wide">
+              <div className="text-4xl font-semibold text-dark-text">{STATS.crosspoints}</div>
+              <div className="mt-2 text-sm font-medium text-dark-text-secondary uppercase tracking-wide">
                 API Crosspoints
               </div>
             </div>
             <div className="animate-fadeIn" style={{ animationDelay: "300ms" }}>
-              <div className="text-4xl font-bold">{STATS.testCoverage}</div>
-              <div className="mt-2 text-sm font-medium text-white/70 uppercase tracking-wide">
+              <div className="text-4xl font-semibold text-dark-text">{STATS.testCoverage}</div>
+              <div className="mt-2 text-sm font-medium text-dark-text-secondary uppercase tracking-wide">
                 Test Coverage
               </div>
             </div>
@@ -98,21 +95,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Wave divider */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg
-          className="w-full"
-          viewBox="0 0 1440 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-            fill="white"
-          />
-        </svg>
-      </div>
+      {/* Subtle bottom edge (not wave) */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-border to-transparent"></div>
     </section>
   );
 }

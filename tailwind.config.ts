@@ -6,15 +6,28 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        // Cyril Brand Colors
+        // Dark Mode System (Anthropic-inspired)
+        'dark-bg': '#0f0f0f',
+        'dark-surface': '#1a1a1a',
+        'dark-border': '#2a2a2a',
+        'dark-text': '#f5f5f5',
+        'dark-text-secondary': '#d0d0d0',
+
+        // Cyril Brand Colors (UPDATED: Orange primary, removed teal)
         cyril: {
-          teal: "#2D7D8E", // Primary brand color
-          orange: "#C15F3C", // Heritage (Claude connection)
+          orange: {
+            DEFAULT: '#d97757',
+            light: '#e08862',
+            dark: '#c86847',
+          },
+          // Legacy teal removed - now using orange as primary
         },
-        // Agent Colors
+
+        // Agent Colors (PRESERVED - unchanged)
         agent: {
           architect: "#8B5CF6", // Purple
           researcher: "#F59E0B", // Amber
@@ -25,16 +38,26 @@ const config: Config = {
           deployer: "#10B981", // Emerald
           documenter: "#6366F1", // Indigo
         },
+
         // Semantic Colors
         success: "#10B981",
         warning: "#F59E0B",
         error: "#EF4444",
         info: "#3B82F6",
-        // Dark Mode Neutrals
-        dark: {
-          base: "#1A1A2E",
-          charcoal: "#2D2D44",
-          slate: "#4A4A5E",
+
+        // Terminal Chrome Colors (macOS)
+        terminal: {
+          red: '#ff5f57',
+          yellow: '#ffbd2e',
+          green: '#28ca42',
+        },
+
+        // Syntax Highlighting
+        syntax: {
+          keyword: '#d97757', // Orange for keywords
+          string: '#4ade80', // Green for strings
+          comment: '#616161', // Gray for comments
+          function: '#60a5fa', // Blue for functions
         },
       },
       fontFamily: {
@@ -48,11 +71,11 @@ const config: Config = {
           "sans-serif",
         ],
         mono: [
+          "Fira Code",
           "JetBrains Mono",
           "SF Mono",
           "Monaco",
           "Cascadia Code",
-          "Roboto Mono",
           "Consolas",
           "Courier New",
           "monospace",

@@ -1,3 +1,5 @@
+"use client";
+
 import { AGENTS } from "@/lib/constants";
 import * as LucideIcons from "lucide-react";
 
@@ -18,14 +20,14 @@ const getIcon = (iconName: string) => {
 
 export default function AgentShowcase() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-dark-bg py-24">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-gray-900 sm:text-5xl">
+          <h2 className="mb-4 text-dark-text font-semibold">
             Meet the 8 Specialists
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-600">
+          <p className="mx-auto max-w-2xl text-lg text-dark-text-secondary">
             Each agent brings deep domain expertise and 200k context to your
             development workflow. Automatic selection and coordination means you
             get the right specialist for every task.
@@ -33,33 +35,43 @@ export default function AgentShowcase() {
         </div>
 
         {/* Agent Cards Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {AGENTS.map((agent, index) => (
             <div
               key={agent.id}
-              className="group relative overflow-hidden rounded-md border-l-4 border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-l-4 hover:shadow-lg"
+              className="group relative overflow-hidden rounded-lg border border-dark-border bg-dark-surface p-8 shadow-sm transition-all hover:border-opacity-100 hover:shadow-lg"
               style={{
-                borderLeftColor: agent.color,
                 animationDelay: `${index * 75}ms`,
+                ['--agent-color' as string]: agent.color,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = agent.color;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '';
               }}
             >
-              {/* Agent Icon Circle */}
+              {/* Agent Icon Circle - Agent color at 10% opacity background */}
               <div
                 className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full text-white"
-                style={{ backgroundColor: agent.color }}
+                style={{
+                  backgroundColor: `${agent.color}20`,
+                }}
               >
-                {(() => {
-                  const IconComponent = getIcon(agent.icon);
-                  return <IconComponent size={28} strokeWidth={2} />;
-                })()}
+                <div style={{ color: agent.color }}>
+                  {(() => {
+                    const IconComponent = getIcon(agent.icon);
+                    return <IconComponent size={28} strokeWidth={2} />;
+                  })()}
+                </div>
               </div>
 
               {/* Agent Name */}
-              <h3 className="mb-2 text-xl font-bold text-gray-900">
+              <h3 className="mb-2 text-xl font-semibold text-dark-text">
                 {agent.name}
               </h3>
 
-              {/* Agent Role */}
+              {/* Agent Role - Agent color */}
               <div
                 className="mb-3 text-sm font-semibold"
                 style={{ color: agent.color }}
@@ -68,13 +80,13 @@ export default function AgentShowcase() {
               </div>
 
               {/* Agent Description */}
-              <p className="text-sm leading-relaxed text-gray-600">
+              <p className="text-sm leading-relaxed text-dark-text-secondary">
                 {agent.description}
               </p>
 
-              {/* Hover effect overlay */}
+              {/* Hover accent line - Agent color expands from left */}
               <div
-                className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-5"
+                className="absolute bottom-0 left-0 h-1 w-0 transition-all duration-300 group-hover:w-full"
                 style={{ backgroundColor: agent.color }}
               ></div>
             </div>
@@ -82,8 +94,8 @@ export default function AgentShowcase() {
         </div>
 
         {/* Agent Formation Visual */}
-        <div className="mt-16 rounded-lg border border-gray-200 bg-gray-50 p-8 text-center">
-          <p className="mb-6 text-sm font-medium uppercase tracking-wide text-gray-500">
+        <div className="mt-16 rounded-lg border border-dark-border bg-dark-surface p-8 text-center">
+          <p className="mb-6 text-sm font-medium uppercase tracking-wide text-dark-text-secondary">
             Orchestrated Agent Formation
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -100,12 +112,12 @@ export default function AgentShowcase() {
                   })()}
                 </div>
                 {index < AGENTS.length - 1 && (
-                  <LucideIcons.ChevronRight className="h-4 w-4 text-gray-400" />
+                  <LucideIcons.ChevronRight className="h-4 w-4 text-dark-border" />
                 )}
               </div>
             ))}
           </div>
-          <p className="mt-6 text-sm text-gray-600">
+          <p className="mt-6 text-sm text-dark-text-secondary">
             Sequential, parallel, or staged execution - Cyril orchestrates the
             optimal workflow for your task.
           </p>

@@ -2,32 +2,32 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 export default function CTASection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-cyril-teal via-cyril-teal/90 to-blue-600 py-20 text-white">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] bg-repeat"></div>
+    <section className="relative overflow-hidden bg-dark-bg py-24 text-white">
+      {/* Minimal dot grid pattern (3% opacity) */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IndoaXRlIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')]"></div>
       </div>
 
       <div className="container relative mx-auto px-6">
         <div className="mx-auto max-w-3xl text-center">
           {/* Headline */}
-          <h2 className="mb-6 text-4xl font-bold sm:text-5xl">
+          <h2 className="mb-6 text-dark-text font-semibold">
             Ready to Level Up Your Development?
           </h2>
 
           {/* Description */}
-          <p className="mb-10 text-xl leading-relaxed text-white/90">
+          <p className="mb-10 text-xl leading-relaxed text-dark-text-secondary">
             Join developers who are building production applications faster with
             Cyril's intelligent multi-agent orchestration system.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Button - Orange */}
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href={SITE_CONFIG.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-cyril-orange px-8 py-4 text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-cyril-orange/90 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="inline-flex items-center gap-2 rounded-md bg-cyril-orange px-8 py-4 text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-cyril-orange-light hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyril-orange"
             >
               <svg
                 className="h-6 w-6"
@@ -46,7 +46,7 @@ export default function CTASection() {
           </div>
 
           {/* Bottom Text */}
-          <p className="mt-8 text-sm font-medium text-white/70">
+          <p className="mt-8 text-sm font-medium text-dark-text-secondary">
             Open Source • MIT License • Production Ready
           </p>
         </div>

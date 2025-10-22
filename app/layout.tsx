@@ -57,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`dark ${inter.variable}`}>
       <body className="font-sans">{children}</body>
     </html>
   );

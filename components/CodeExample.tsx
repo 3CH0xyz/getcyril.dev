@@ -14,14 +14,14 @@ export default function CodeExample() {
   };
 
   return (
-    <section className="bg-dark-base py-20 text-white">
+    <section className="bg-dark-surface py-24 text-white">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
+          <h2 className="mb-4 text-dark-text font-semibold">
             See It in Action
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-400">
+          <p className="mx-auto max-w-2xl text-lg text-dark-text-secondary">
             Real code, real integrations, real results. No mocks, no
             placeholders—just production-ready implementations.
           </p>
@@ -29,22 +29,23 @@ export default function CodeExample() {
 
         {/* Code Block */}
         <div className="mx-auto max-w-4xl">
-          <div className="overflow-hidden rounded-lg border border-dark-slate bg-dark-charcoal shadow-2xl">
-            {/* Header */}
-            <div className="flex items-center justify-between border-b border-dark-slate bg-dark-base px-6 py-4">
+          <div className="overflow-hidden rounded-lg border border-dark-border bg-dark-bg shadow-2xl">
+            {/* Terminal Header - macOS style */}
+            <div className="flex items-center justify-between border-b border-dark-border bg-dark-surface px-6 py-4">
               <div className="flex items-center gap-3">
+                {/* macOS traffic light dots */}
                 <div className="flex gap-2">
-                  <div className="h-3 w-3 rounded-full bg-error"></div>
-                  <div className="h-3 w-3 rounded-full bg-warning"></div>
-                  <div className="h-3 w-3 rounded-full bg-success"></div>
+                  <div className="h-3 w-3 rounded-full bg-terminal-red"></div>
+                  <div className="h-3 w-3 rounded-full bg-terminal-yellow"></div>
+                  <div className="h-3 w-3 rounded-full bg-terminal-green"></div>
                 </div>
-                <span className="font-mono text-sm font-medium text-gray-400">
+                <span className="font-mono text-sm font-medium text-dark-text-secondary">
                   payment_example.py
                 </span>
               </div>
               <button
                 onClick={copyToClipboard}
-                className="flex items-center gap-2 rounded-md bg-cyril-teal px-4 py-2 text-sm font-medium transition-all hover:bg-cyril-teal/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyril-teal"
+                className="flex items-center gap-2 rounded-md bg-cyril-orange px-4 py-2 text-sm font-medium text-white transition-all hover:bg-cyril-orange-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyril-orange"
                 aria-label={copied ? "Copied to clipboard" : "Copy code"}
               >
                 {copied ? (
@@ -85,31 +86,31 @@ export default function CodeExample() {
               </button>
             </div>
 
-            {/* Code Content */}
+            {/* Code Content - Fira Code font with syntax highlighting */}
             <div className="overflow-x-auto p-6">
               <pre className="font-mono text-sm leading-relaxed">
                 <code>
                   <div className="space-y-1">
                     {CODE_EXAMPLE.split("\n").map((line, index) => (
                       <div key={index} className="flex">
-                        <span className="mr-4 w-8 select-none text-right text-gray-600">
+                        <span className="mr-4 w-8 select-none text-right text-syntax-comment">
                           {index + 1}
                         </span>
                         <span
                           className={
                             line.includes("import") || line.includes("from")
-                              ? "text-agent-documenter"
+                              ? "text-syntax-keyword"
                               : line.includes("async") ||
                                 line.includes("await") ||
                                 line.includes("def")
-                              ? "text-agent-implementer"
+                              ? "text-syntax-keyword"
                               : line.includes("#")
-                              ? "text-gray-500"
+                              ? "text-syntax-comment"
                               : line.includes('"') || line.includes("'")
-                              ? "text-success"
-                              : line.includes("print") || line.includes("f")
-                              ? "text-agent-tester"
-                              : "text-gray-300"
+                              ? "text-syntax-string"
+                              : line.includes("print")
+                              ? "text-syntax-function"
+                              : "text-dark-text-secondary"
                           }
                         >
                           {line || " "}
@@ -124,36 +125,36 @@ export default function CodeExample() {
 
           {/* Code Features */}
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-lg border border-dark-slate bg-dark-charcoal p-4 text-center">
+            <div className="rounded-lg border border-dark-border bg-dark-bg p-4 text-center">
               <div className="mb-2 flex justify-center">
-                <Sparkles className="h-8 w-8 text-cyril-teal" />
+                <Sparkles className="h-8 w-8 text-cyril-orange" />
               </div>
-              <div className="text-sm font-medium text-gray-300">
+              <div className="text-sm font-medium text-dark-text">
                 Real Implementation
               </div>
-              <div className="mt-1 text-xs text-gray-500">
+              <div className="mt-1 text-xs text-dark-text-secondary">
                 No mocks or placeholders
               </div>
             </div>
-            <div className="rounded-lg border border-dark-slate bg-dark-charcoal p-4 text-center">
+            <div className="rounded-lg border border-dark-border bg-dark-bg p-4 text-center">
               <div className="mb-2 flex justify-center">
                 <Shield className="h-8 w-8 text-success" />
               </div>
-              <div className="text-sm font-medium text-gray-300">
+              <div className="text-sm font-medium text-dark-text">
                 Production Ready
               </div>
-              <div className="mt-1 text-xs text-gray-500">
+              <div className="mt-1 text-xs text-dark-text-secondary">
                 Full error handling
               </div>
             </div>
-            <div className="rounded-lg border border-dark-slate bg-dark-charcoal p-4 text-center">
+            <div className="rounded-lg border border-dark-border bg-dark-bg p-4 text-center">
               <div className="mb-2 flex justify-center">
                 <Zap className="h-8 w-8 text-warning" />
               </div>
-              <div className="text-sm font-medium text-gray-300">
+              <div className="text-sm font-medium text-dark-text">
                 Type Safe
               </div>
-              <div className="mt-1 text-xs text-gray-500">
+              <div className="mt-1 text-xs text-dark-text-secondary">
                 Async/await patterns
               </div>
             </div>
