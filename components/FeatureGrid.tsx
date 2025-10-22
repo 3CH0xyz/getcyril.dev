@@ -1,4 +1,16 @@
 import { FEATURES } from "@/lib/constants";
+import * as LucideIcons from "lucide-react";
+
+// Icon name mapper
+const getIcon = (iconName: string) => {
+  const iconMap: Record<string, React.ComponentType<LucideIcons.LucideProps>> = {
+    "users": LucideIcons.Users,
+    "plug-zap": LucideIcons.PlugZap,
+    "zap": LucideIcons.Zap,
+    "sparkles": LucideIcons.Sparkles,
+  };
+  return iconMap[iconName] || LucideIcons.Circle;
+};
 
 export default function FeatureGrid() {
   return (
@@ -24,8 +36,11 @@ export default function FeatureGrid() {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Icon */}
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-cyril-teal/10 text-3xl">
-                {feature.icon}
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-cyril-teal/10 text-cyril-teal">
+                {(() => {
+                  const IconComponent = getIcon(feature.icon);
+                  return <IconComponent size={32} strokeWidth={2} />;
+                })()}
               </div>
 
               {/* Title */}

@@ -1,8 +1,12 @@
 import { SITE_CONFIG, STATS } from "@/lib/constants";
+import { Sparkles, BookOpen } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-cyril-teal via-cyril-teal/90 to-blue-600 text-white">
+      {/* Dark overlay for better text contrast */}
+      <div className="absolute inset-0 bg-black/30"></div>
+
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] bg-repeat"></div>
@@ -11,23 +15,23 @@ export default function Hero() {
       <div className="container relative mx-auto px-6 py-24 sm:py-32 lg:py-40">
         <div className="mx-auto max-w-4xl text-center">
           {/* Version Badge */}
-          <div className="mb-8 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
-            <span className="mr-2">✨</span>
+          <div className="mb-8 inline-flex items-center rounded-full border border-white/30 bg-white/15 px-4 py-1.5 text-sm font-medium backdrop-blur-sm shadow-lg">
+            <Sparkles className="mr-2 h-4 w-4" />
             <span>Version 2.1.0 - Production Ready</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl drop-shadow-lg">
             {SITE_CONFIG.tagline}
           </h1>
 
           {/* Subheadline */}
-          <p className="mb-4 text-xl font-semibold sm:text-2xl text-white/95">
+          <p className="mb-4 text-xl font-semibold sm:text-2xl drop-shadow-md">
             {SITE_CONFIG.description}
           </p>
 
           {/* Supporting text */}
-          <p className="mb-10 text-lg leading-relaxed text-white/80 sm:text-xl max-w-3xl mx-auto">
+          <p className="mb-10 text-lg leading-relaxed text-white/95 sm:text-xl max-w-3xl mx-auto drop-shadow-md">
             Just tell Cyril what you want. Everything else happens automatically.
           </p>
 
@@ -59,7 +63,8 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md border-2 border-white bg-transparent px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              📚 View Documentation
+              <BookOpen className="h-5 w-5" />
+              View Documentation
             </a>
           </div>
 

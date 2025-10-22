@@ -1,4 +1,20 @@
 import { AGENTS } from "@/lib/constants";
+import * as LucideIcons from "lucide-react";
+
+// Icon name mapper to get the correct Lucide component
+const getIcon = (iconName: string) => {
+  const iconMap: Record<string, React.ComponentType<LucideIcons.LucideProps>> = {
+    "building-2": LucideIcons.Building2,
+    "search": LucideIcons.Search,
+    "code-2": LucideIcons.Code2,
+    "shield-check": LucideIcons.ShieldCheck,
+    "flask-conical": LucideIcons.FlaskConical,
+    "bug": LucideIcons.Bug,
+    "rocket": LucideIcons.Rocket,
+    "file-text": LucideIcons.FileText,
+  };
+  return iconMap[iconName] || LucideIcons.Circle;
+};
 
 export default function AgentShowcase() {
   return (
@@ -29,10 +45,13 @@ export default function AgentShowcase() {
             >
               {/* Agent Icon Circle */}
               <div
-                className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full text-2xl text-white"
+                className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full text-white"
                 style={{ backgroundColor: agent.color }}
               >
-                {agent.icon}
+                {(() => {
+                  const IconComponent = getIcon(agent.icon);
+                  return <IconComponent size={28} strokeWidth={2} />;
+                })()}
               </div>
 
               {/* Agent Name */}
@@ -71,26 +90,17 @@ export default function AgentShowcase() {
             {AGENTS.map((agent, index) => (
               <div key={agent.id} className="flex items-center gap-2">
                 <div
-                  className="flex h-12 w-12 items-center justify-center rounded-full text-xl"
+                  className="flex h-12 w-12 items-center justify-center rounded-full"
                   style={{ backgroundColor: agent.color }}
                   title={agent.name}
                 >
-                  {agent.icon}
+                  {(() => {
+                    const IconComponent = getIcon(agent.icon);
+                    return <IconComponent size={20} strokeWidth={2} className="text-white" />;
+                  })()}
                 </div>
                 {index < AGENTS.length - 1 && (
-                  <svg
-                    className="h-4 w-4 text-gray-400"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+                  <LucideIcons.ChevronRight className="h-4 w-4 text-gray-400" />
                 )}
               </div>
             ))}

@@ -2,6 +2,7 @@
 
 import { CODE_EXAMPLE } from "@/lib/constants";
 import { useState } from "react";
+import { Sparkles, Shield, Zap } from "lucide-react";
 
 export default function CodeExample() {
   const [copied, setCopied] = useState(false);
@@ -124,7 +125,9 @@ export default function CodeExample() {
           {/* Code Features */}
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             <div className="rounded-lg border border-dark-slate bg-dark-charcoal p-4 text-center">
-              <div className="mb-2 text-2xl">✨</div>
+              <div className="mb-2 flex justify-center">
+                <Sparkles className="h-8 w-8 text-cyril-teal" />
+              </div>
               <div className="text-sm font-medium text-gray-300">
                 Real Implementation
               </div>
@@ -133,7 +136,9 @@ export default function CodeExample() {
               </div>
             </div>
             <div className="rounded-lg border border-dark-slate bg-dark-charcoal p-4 text-center">
-              <div className="mb-2 text-2xl">🔐</div>
+              <div className="mb-2 flex justify-center">
+                <Shield className="h-8 w-8 text-success" />
+              </div>
               <div className="text-sm font-medium text-gray-300">
                 Production Ready
               </div>
@@ -142,7 +147,9 @@ export default function CodeExample() {
               </div>
             </div>
             <div className="rounded-lg border border-dark-slate bg-dark-charcoal p-4 text-center">
-              <div className="mb-2 text-2xl">⚡</div>
+              <div className="mb-2 flex justify-center">
+                <Zap className="h-8 w-8 text-warning" />
+              </div>
               <div className="text-sm font-medium text-gray-300">
                 Type Safe
               </div>

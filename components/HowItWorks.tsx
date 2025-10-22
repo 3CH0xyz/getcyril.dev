@@ -1,4 +1,15 @@
 import { HOW_IT_WORKS } from "@/lib/constants";
+import * as LucideIcons from "lucide-react";
+
+// Icon name mapper
+const getIcon = (iconName: string) => {
+  const iconMap: Record<string, React.ComponentType<LucideIcons.LucideProps>> = {
+    "package": LucideIcons.Package,
+    "key": LucideIcons.Key,
+    "rocket": LucideIcons.Rocket,
+  };
+  return iconMap[iconName] || LucideIcons.Circle;
+};
 
 export default function HowItWorks() {
   return (
@@ -29,8 +40,11 @@ export default function HowItWorks() {
                 }`}
               >
                 {/* Step Circle */}
-                <div className="z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-full border-4 border-white bg-cyril-teal text-2xl font-bold text-white shadow-lg lg:absolute lg:left-1/2 lg:-translate-x-1/2">
-                  {item.icon}
+                <div className="z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-full border-4 border-white bg-cyril-teal text-white shadow-lg lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+                  {(() => {
+                    const IconComponent = getIcon(item.icon);
+                    return <IconComponent size={32} strokeWidth={2} />;
+                  })()}
                 </div>
 
                 {/* Content Card */}
