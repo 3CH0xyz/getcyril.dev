@@ -122,10 +122,10 @@ const config: Config = {
         "scale-up": "scaleUp 200ms ease-out",
         pulse: "pulse 2s ease-in-out infinite",
         spin: "spin 1s linear infinite",
-        "float-slow": "floatSlow 25s ease-in-out infinite",
-        "float-slower": "floatSlower 30s ease-in-out infinite",
-        float: "float 20s ease-in-out infinite",
-        drift: "drift 35s ease-in-out infinite",
+        "float-slow": "floatSlow 15s ease-in-out infinite",
+        "float-slower": "floatSlower 18s ease-in-out infinite",
+        float: "float 12s ease-in-out infinite",
+        drift: "drift 20s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
